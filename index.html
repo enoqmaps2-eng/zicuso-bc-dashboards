@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enom Technologies Inc. – Built-for-Purpose Solutions</title>
+  <meta name="description" content="Microsoft Power Platform consulting in Edmonton, Alberta. Custom Power Apps, Power Automate, Power BI, SharePoint, and Office 365 solutions built for your business." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0A1628;
+      --navy-mid: #0F2040;
+      --blue: #0066FF;
+      --blue-light: #3385FF;
+      --blue-glow: rgba(0, 102, 255, 0.15);
+      --white: #FFFFFF;
+      --slate: #64748B;
+      --slate-light: #94A3B8;
+      --wash: #F8FAFC;
+      --border: #E2E8F0;
+      --text: #1E293B;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 0 2rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--blue);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1rem;
+      color: white;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo-text {
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+      letter-spacing: -0.3px;
+    }
+
+    .nav-logo-text span { color: var(--blue-light); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: white; }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--blue-light) !important; color: white !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 8rem 5% 5rem;
+      gap: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(0,102,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: 20%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(0,102,255,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0,102,255,0.12);
+      border: 1px solid rgba(0,102,255,0.3);
+      color: var(--blue-light);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--blue-light);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 .accent { color: var(--blue-light); }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      max-width: 500px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary:hover { background: var(--blue-light); transform: translateY(-1px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: rgba(255,255,255,0.75);
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: white; }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-badge {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 1.1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: background 0.3s, border-color 0.3s, transform 0.3s;
+      cursor: default;
+    }
+
+    .service-badge:hover {
+      background: rgba(0,102,255,0.1);
+      border-color: rgba(0,102,255,0.35);
+      transform: translateX(4px);
+    }
+
+    .badge-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .badge-text strong {
+      display: block;
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .badge-text span {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.78rem;
+    }
+
+    .badge-arr {
+      margin-left: auto;
+      color: rgba(255,255,255,0.2);
+      font-size: 1rem;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .service-badge:hover .badge-arr {
+      color: var(--blue-light);
+      transform: translateX(3px);
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 2.5rem 5%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-item strong {
+      display: block;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: white;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .stat-item strong span { color: var(--blue-light); }
+
+    .stat-item p {
+      color: var(--slate-light);
+      font-size: 0.82rem;
+      margin-top: 0.35rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 6rem 5%; }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      color: var(--slate);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* ── SERVICES ── */
+    .services { background: var(--wash); }
+
+    .services-header { margin-bottom: 3.5rem; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+      border-color: rgba(0,102,255,0.25);
+      transform: translateY(-2px);
+    }
+
+    .service-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+
+    .service-card p {
+      color: var(--slate);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .service-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.25rem;
+    }
+
+    .tag {
+      background: var(--wash);
+      border: 1px solid var(--border);
+      color: var(--slate);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how {
+      background: white;
+    }
+
+    .how-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .how-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .step:last-child { border-bottom: none; }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      background: var(--navy);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .step p {
+      font-size: 0.88rem;
+      color: var(--slate);
+      line-height: 1.6;
+    }
+
+    .how-visual {
+      background: var(--navy);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .how-visual::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 250px; height: 250px;
+      background: radial-gradient(circle, rgba(0,102,255,0.2) 0%, transparent 70%);
+    }
+
+    .how-visual-title {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.55rem 1rem;
+      border-radius: 8px;
+      margin: 0.3rem;
+    }
+
+    .tech-pills { margin-bottom: 2rem; }
+
+    .how-visual-stat {
+      background: rgba(0,102,255,0.12);
+      border: 1px solid rgba(0,102,255,0.25);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .how-visual-stat strong {
+      display: block;
+      color: white;
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .how-visual-stat span {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.78rem;
+    }
+
+    /* ── VISION ── */
+    .vision {
+      background: var(--navy);
+      text-align: center;
+      padding: 7rem 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vision::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,102,255,0.1) 0%, transparent 70%);
+    }
+
+    .vision .section-eyebrow { color: var(--blue-light); }
+
+    .vision .section-title {
+      color: white;
+      max-width: 700px;
+      margin: 0 auto 1.25rem;
+    }
+
+    .vision .section-sub {
+      color: rgba(255,255,255,0.55);
+      margin: 0 auto 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--wash);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+      color: var(--slate);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.875rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-detail-icon {
+      width: 40px;
+      height: 40px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-detail strong {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--slate);
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-detail a, .contact-detail span {
+      color: var(--navy);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .contact-detail a:hover { color: var(--blue); }
+
+    .contact-form {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+    }
+
+    .contact-form h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.01em;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--wash);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--blue);
+      background: white;
+    }
+
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--blue);
+      color: white;
+      border: none;
+      padding: 0.875rem;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 0.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    .form-submit:hover { background: var(--blue-light); transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 4rem 5% 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand p {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      margin-top: 1rem;
+      max-width: 280px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .footer-logo-mark {
+      width: 34px; height: 34px;
+      background: var(--blue);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.9rem;
+      color: white;
+    }
+
+    .footer-logo-text {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: white;
+    }
+
+    .footer-logo-text span { color: var(--blue-light); }
+
+    .footer-col h4 {
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .footer-col ul a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul a:hover { color: white; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      color: rgba(255,255,255,0.3);
+      font-size: 0.8rem;
+    }
+
+    .footer-bottom a { color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-bottom a:hover { color: white; }
+
+    /* ── MOBILE NAV HAMBURGER ── */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      padding: 0.4rem 0.6rem;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: white;
+      border-radius: 2px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 7rem 5% 4rem; gap: 3rem; }
+      .hero-right { order: -1; }
+      .service-badge { display: none; }
+      .service-badge:nth-child(-n+2) { display: flex; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr; }
+      .how-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .footer-brand { grid-column: 1/-1; }
+      nav .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 4rem 5%; }
+      .stats-bar { grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 2rem 5%; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-mark">E</div>
+      <span class="nav-logo-text">Enom <span>Technologies</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How We Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Book a Call</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Microsoft Power Platform Partner · Edmonton, AB</div>
+      <h1>Built for<br/><span class="accent">Your Business.</span><br/>Not Anyone Else's.</h1>
+      <p class="hero-desc">We craft intelligent, scalable solutions on Microsoft's Power Platform — turning your existing M365 investment into a competitive advantage through automation, custom apps, and real-time insights.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Schedule a Free Consultation →</a>
+        <a href="#services" class="btn-ghost">See Our Services</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="service-badge">
+        <div class="badge-icon" style="background:rgba(0,120,212,0.15);">⚡</div>
+        <div class="badge-text">
+          <strong>Power Apps</strong>
+          <span>Custom business apps, no heavy coding</span>
+        </div>
+        <div class="badge-arr">→</div>
+      </div>
+      <div class="service-badge">
+        <div class="badge-icon" style="background:rgba(0,180,120,0.15);">🔄</div>
+        <div class="badge-text">
+          <strong>Power Automate</strong>
+          <span>Workflow automation & integration</span>
+        </div>
+        <div class="badge-arr">→</div>
+      </div>
+      <div class="service-badge">
+        <div class="badge-icon" style="background:rgba(255,180,0,0.12);">📊</div>
+        <div class="badge-text">
+          <strong>Power BI</strong>
+          <span>Dashboards & data-driven decisions</span>
+        </div>
+        <div class="badge-arr">→</div>
+      </div>
+      <div class="service-badge">
+        <div class="badge-icon" style="background:rgba(180,0,200,0.12);">🗂️</div>
+        <div class="badge-text">
+          <strong>SharePoint</strong>
+          <span>Modern intranets & collaboration</span>
+        </div>
+        <div class="badge-arr">→</div>
+      </div>
+      <div class="service-badge">
+        <div class="badge-icon" style="background:rgba(0,102,255,0.12);">☁️</div>
+        <div class="badge-text">
+          <strong>Office 365 Migrations</strong>
+          <span>Smooth transitions, zero data loss</span>
+        </div>
+        <div class="badge-arr">→</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <strong>10<span>+</span></strong>
+      <p>Completed Projects</p>
+    </div>
+    <div class="stat-item">
+      <strong>15<span>+</span></strong>
+      <p>Happy Clients</p>
+    </div>
+    <div class="stat-item">
+      <strong>15<span>+</span></strong>
+      <p>Microsoft Certifications</p>
+    </div>
+    <div class="stat-item">
+      <strong>5<span>+</span></strong>
+      <p>Expert Team Members</p>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-header">
+      <div class="section-eyebrow">Our Services</div>
+      <h2 class="section-title">Get More From What You Already Have</h2>
+      <p class="section-sub">We build on Microsoft 365 — the tools your team already uses — so you get enterprise-grade solutions without the enterprise software bill.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-icon" style="background:rgba(0,120,212,0.1);">⚡</div>
+        <h3>Power Platform Solutions</h3>
+        <p>Custom Power Apps to replace spreadsheets and paper forms. Automated workflows with Power Automate. Intelligent data management via Dataverse. All built to fit exactly how your business operates.</p>
+        <div class="service-card-tags">
+          <span class="tag">Power Apps</span>
+          <span class="tag">Power Automate</span>
+          <span class="tag">Dataverse</span>
+          <span class="tag">Power Pages</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon" style="background:rgba(180,0,200,0.08);">🗂️</div>
+        <h3>SharePoint Development & Consulting</h3>
+        <p>Modern intranet portals, structured document libraries, and automated approval flows — all within the Microsoft 365 ecosystem your team already trusts. We turn SharePoint into a strategic asset.</p>
+        <div class="service-card-tags">
+          <span class="tag">Intranet Design</span>
+          <span class="tag">Document Management</span>
+          <span class="tag">Migration</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon" style="background:rgba(255,180,0,0.1);">📊</div>
+        <h3>Power BI Development & Consulting</h3>
+        <p>Interactive dashboards and automated reports that surface the metrics that actually matter. We handle data modeling, DAX, role-based access, and integration with your existing data sources.</p>
+        <div class="service-card-tags">
+          <span class="tag">Custom Dashboards</span>
+          <span class="tag">DAX & Data Modeling</span>
+          <span class="tag">Automated Reports</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon" style="background:rgba(0,102,255,0.1);">☁️</div>
+        <h3>Office 365 Licensing & Cloud Migrations</h3>
+        <p>From selecting the right M365 plans to migrating email, files, and data with zero loss — we handle every step so your team doesn't skip a beat. Includes post-migration support and training.</p>
+        <div class="service-card-tags">
+          <span class="tag">M365 Licensing</span>
+          <span class="tag">Email Migration</span>
+          <span class="tag">OneDrive & Teams</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="how" id="how">
+    <div class="how-inner">
+      <div>
+        <div class="section-eyebrow">How We Work</div>
+        <h2 class="section-title">A Process Built Around Your Reality</h2>
+        <p class="section-sub" style="margin-bottom:2.5rem;">We don't arrive with a pre-built solution and a screwdriver. We start by understanding your business, then design something that actually fits.</p>
+        <div class="how-steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div>
+              <h4>You Share Your Vision</h4>
+              <p>Tell us your challenges and goals. We listen, ask the right questions, and document your unique needs — no assumptions, no cookie-cutter intake forms.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div>
+              <h4>We Propose a Purpose-Built Solution</h4>
+              <p>Based on your goals, we design a tailored solution using Microsoft Power Platform — maximizing your existing M365 investment for scalability and ROI.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div>
+              <h4>We Build, Test, and Deliver</h4>
+              <p>We develop and deploy your solution with you in the loop every step of the way. We don't just deliver software — we deliver results and stay available after launch.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="how-visual">
+        <div class="how-visual-title">The Microsoft Stack We Work With</div>
+        <div class="tech-pills">
+          <span class="tech-pill">⚡ Power Apps</span>
+          <span class="tech-pill">🔄 Power Automate</span>
+          <span class="tech-pill">📊 Power BI</span>
+          <span class="tech-pill">🗂️ SharePoint</span>
+          <span class="tech-pill">☁️ Exchange Online</span>
+          <span class="tech-pill">🗄️ Dataverse</span>
+          <span class="tech-pill">👥 Microsoft Teams</span>
+          <span class="tech-pill">📁 OneDrive</span>
+        </div>
+        <div class="how-visual-stat">
+          <strong>15+</strong>
+          <span>Microsoft certifications across our team</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION / CTA -->
+  <section class="vision" id="about">
+    <div class="section-eyebrow">Our Vision</div>
+    <h2 class="section-title">To Be a Global Leader in Power Platform Consulting</h2>
+    <p class="section-sub">We set the standard for excellence through cutting-edge solutions, client empowerment, and long-term partnerships built on trust and measurable success. No two businesses are the same — and your technology shouldn't be either.</p>
+    <a href="#contact" class="btn-primary">Start Your Transformation →</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <div class="section-eyebrow">Get In Touch</div>
+        <h2>Let's Build Something That Works for You</h2>
+        <p>Book a free consultation and tell us about your business challenges. We'll show you exactly what's possible — and what it would take to get there.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div>
+            <strong>Office</strong>
+            <span>103-11440 Ellerslie Rd SW, Edmonton AB T6W 3WT</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div>
+            <strong>Phone</strong>
+            <a href="tel:+17802432742">+1 (780) 243-2742</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <div>
+            <strong>Email</strong>
+            <a href="mailto:support@enomtechnologies.ca">support@enomtechnologies.ca</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🕐</div>
+          <div>
+            <strong>Hours</strong>
+            <span>Mon–Fri, 8:30 AM – 5:30 PM MST</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Book a Free Consultation</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="John" />
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="Smith" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Work Email</label>
+          <input type="email" id="email" placeholder="john@company.com" />
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" placeholder="Your company name" />
+        </div>
+        <div class="form-group">
+          <label for="service">Service of Interest</label>
+          <select id="service">
+            <option value="">Select a service...</option>
+            <option>Power Platform Solutions</option>
+            <option>SharePoint Development</option>
+            <option>Power BI Consulting</option>
+            <option>Office 365 / Cloud Migration</option>
+            <option>Not sure — let's talk</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell Us About Your Challenge</label>
+          <textarea id="message" placeholder="Briefly describe what you're looking to solve or automate..."></textarea>
+        </div>
+        <button class="form-submit">Send Message →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">
+          <div class="footer-logo-mark">E</div>
+          <span class="footer-logo-text">Enom <span>Technologies</span></span>
+        </a>
+        <p>Built for Purpose. Driven by Innovation. Powered by You. Microsoft Power Platform consulting based in Edmonton, Alberta.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Power Platform</a></li>
+          <li><a href="#services">SharePoint</a></li>
+          <li><a href="#services">Power BI</a></li>
+          <li><a href="#services">Cloud Migrations</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Enom Technologies Inc. All rights reserved.</p>
+      <p><a href="mailto:support@enomtechnologies.ca">support@enomtechnologies.ca</a> · <a href="tel:+17802432742">+1 (780) 243-2742</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth nav highlight on scroll
+    const sections = document.querySelectorAll('section[id], div[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.style.color = link.getAttribute('href') === '#' + entry.target.id
+              ? 'white' : '';
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(s => observer.observe(s));
+
+    // Mobile nav toggle (basic)
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      const links = document.querySelector('.nav-links');
+      if (links.style.display === 'flex') {
+        links.style.display = '';
+      } else {
+        links.style.display = 'flex';
+        links.style.flexDirection = 'column';
+        links.style.position = 'absolute';
+        links.style.top = '68px';
+        links.style.left = '0';
+        links.style.right = '0';
+        links.style.background = 'rgba(10,22,40,0.98)';
+        links.style.padding = '1.5rem 5%';
+        links.style.gap = '1.25rem';
+        links.style.borderBottom = '1px solid rgba(255,255,255,0.08)';
+      }
+    });
+  </script>
+</body>
+</html>
